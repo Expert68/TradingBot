@@ -3,4 +3,10 @@ import unittest
 
 class TestTimeFrameConverter(unittest.TestCase):
     def test_init(self):
-        con = TimeFrameConverter("hello")
+        inputPath = "resources/TestData.csv"
+        timeframe = "5"
+        outputPath = "output.csv"
+        con = TimeFrameConverter(inputPath, timeframe, outputPath)
+        self.assertEqual(inputPath, con.inputFile)
+        self.assertEqual(timeframe, con.timeFrame)
+        self.assertEqual(outputPath, con.outputFile)
